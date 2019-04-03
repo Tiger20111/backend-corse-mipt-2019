@@ -17,7 +17,7 @@ class User(UserMixin, db.Model):
     password_hash = db.Column(db.String(128))
     posts = db.relationship('Post', backref='author')
     
-    valabel = db.Column(db.Boolean, nullable=False, default=False)
+    confirmed = db.Column(db.Boolean, nullable=False, default=False)
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
@@ -26,10 +26,10 @@ class User(UserMixin, db.Model):
         return check_password_hash(self.password_hash, password)
 
     def set_valabel(self, valabel) :
-        self.valabel = valabel
+        self.confirmed = valabel
     
     def check_valabel(self) :
-        return valabel
+        return confirmed
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
