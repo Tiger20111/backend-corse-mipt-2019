@@ -19,4 +19,4 @@ services:
       dockerfile: Dockerfile
     restart: always
     depends_on:
-- rabbit
+     - rabbit
