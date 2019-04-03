@@ -10,8 +10,7 @@ from web_app.send import send
 @app.route('/index')
 @login_required
 def index():
-    user = {'username': 'Miguel',
-            'avalabel': 'false'}
+    user = {'username': 'Miguel'}
     posts = [
             {
                 'author': {'username': 'John'},
@@ -48,6 +47,7 @@ def logout():
 
 @app.route('/users')
 def users():
+    if current_user.is_authenticated
     users = User.query
     return render_template('users.html', title='Users', posts=users)
 
@@ -62,6 +62,7 @@ def register():
 
         user = User(username = form.username.data, email = form.email.data)
         user.set_password(form.password.data)
+
         db.session.add(user)
         db.session.commit()
         flash('Congratulations, you are now a registered user!')
@@ -70,5 +71,5 @@ def register():
 
 @app.route('/avalabel')
 def avalabel():
-    
+    user.set_valabel(True)
     return render_template('avalabel.html', title='avalabel')

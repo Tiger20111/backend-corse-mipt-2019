@@ -1,3 +1,8 @@
+
+{% if current_user.valabel %}
+<h1>you are not validated</h1>
+{% endif %}
+
 <div>
     First App:
     <a href="{{ url_for('index') }}">Home</a>
