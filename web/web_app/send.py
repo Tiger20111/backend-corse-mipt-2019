@@ -8,6 +8,6 @@ def send(email, url):
 
     message = email + ' ' + url
 
-    channel.basic_publish(exchange='', routing_key='queue',
+    channel.basic_publish(exchange='', routing_key='first-queue',
                           body=message, properties=pika.BasicProperties(
                             delivery_mode = 2))
