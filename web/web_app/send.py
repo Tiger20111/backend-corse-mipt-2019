@@ -8,10 +8,7 @@ def send(email, url):
 
     message = email + ' ' + url
 
-    channel.basic_publish(exchange='',
-                          routing_key='queue',
-                          body=message,
-                          properties=pika.BasicProperties(
-                            delivery_mode = 2 # make message persistent
-                          ))
+    channel.basic_publish(exchange='', routing_key='queue',
+                          body=message, properties=pika.BasicProperties(
+                            delivery_mode = 2))
     print("Requset from {} has been sent" % email)
