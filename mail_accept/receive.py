@@ -13,7 +13,7 @@ conn_params = pika.ConnectionParameters('rabbit', 5672)
 connection = pika.BlockingConnection(conn_params)
 channel = connection.channel()
 
-channel.queue_declare(queue='first-queue')
+channel.queue_declare(queue='first-queue', durable=True)
 
 print("Waiting for messages. To exit press CTRL+C")
 
