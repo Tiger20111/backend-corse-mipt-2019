@@ -6,7 +6,7 @@ services:
      - "5680:5672"  
   flask-app:
     build:
-      context: web-app
+      context: web
       dockerfile: Dockerfile
     restart: always
     ports:
@@ -15,7 +15,7 @@ services:
      - rabbit
   mail-sender:
     build:
-      context: mail-accept
+      context: mail_accept
       dockerfile: Dockerfile
     restart: always
     depends_on:
