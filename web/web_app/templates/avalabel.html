@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Hi, {{ current_user.username }}!</h1>
+    <h2> анфочинатли ю должен подтвердить аккккаунт </h2>
+    <div>(меня то же это всегда бесит)</div>
+    <div>Но ты уже это сделал!))))) Спасибо)))))))</div>
+    <a href = "{{ url_for('index') }}"> возвращаемся </a>
+{% endblock %}
+
