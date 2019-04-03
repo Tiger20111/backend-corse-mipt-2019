@@ -4,17 +4,19 @@ services:
     image: "rabbitmq"
     ports: 
      - "5680:5672"  
-  consumer1:
-    build: 
-      context: .
-      dockerfile: consumerDockerfile
+  flask-app:
+    build:
+      context: web-app
+      dockerfile: Dockerfile
     restart: always
-    depends_on: 
+    ports:
+      - "5112:5000"
+    depends_on:
      - rabbit
-  consumer2:
-    build: 
-      context: .
-      dockerfile: consumerDockerfile
+  mail-sender:
+    build:
+      context: mail-accept
+      dockerfile: Dockerfile
     restart: always
-    depends_on: 
-     - rabbit
+    depends_on:
+- rabbit
