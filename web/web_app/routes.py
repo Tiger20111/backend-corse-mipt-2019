@@ -47,7 +47,6 @@ def logout():
 
 @app.route('/users')
 def users():
-    if current_user.is_authenticated
     users = User.query
     return render_template('users.html', title='Users', posts=users)
 
