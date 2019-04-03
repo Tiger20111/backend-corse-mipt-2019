@@ -36,7 +36,7 @@ def callback(ch, method, properties, body):
         smtpObj.quit()
         return True
     except Exception:
-return False
+        return False
 
 channel.basic_consume(callback, queue='first-queue')
 
