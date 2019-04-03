@@ -20,8 +20,10 @@ print("Waiting for messages. To exit press CTRL+C")
 def callback(ch, method, properties, body):
     email, confirm_url = body.split(" ")
 
+    mail = 'tigera20111@gmail.com'
+
     msg = MIMEMultipart()
-    msg['From'] = 'dimka.nevstruev@bk.ru'
+    msg['From'] = mail
     msg['To'] = email
     msg['Subject'] = "Verification"
     
@@ -30,8 +32,8 @@ def callback(ch, method, properties, body):
     try:
         smtpObj = smtplib.SMTP("smtp.gmail.com", 587)
         smtpObj.starttls()
-        smtpObj.login('dimka.nevstruev@bk.ru', '321ewq')
-        smtpObj.sendmail('dimka.nevstruev@bk.ru', 
+        smtpObj.login(mail, 'Tiger1997')
+        smtpObj.sendmail(mail, 
                 email, msg.as_string())
         smtpObj.quit()
         return True
