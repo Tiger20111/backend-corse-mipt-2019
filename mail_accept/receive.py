@@ -38,7 +38,7 @@ def callback(ch, method, properties, body):
     except Exception:
         return False
 
-channel.basic_consume(queue='first-queue', callback)
+channel.basic_consume('first-queue', callback)
 
 try:
     channel.start_consuming()
