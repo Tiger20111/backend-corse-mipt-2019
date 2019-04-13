@@ -2,7 +2,6 @@ FROM alpine:3.5
 RUN apk add --update py2-pip
 RUN apk add --update bash
 WORKDIR /code
-ADD config.py /code
 ADD receive.py /code
 ADD requirements.txt /code
 ADD wait-for-it.sh /code
