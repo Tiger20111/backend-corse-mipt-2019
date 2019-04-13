@@ -17,6 +17,6 @@ class Config(object):
     MAIL_USE_SSL = True
 
     # mail accounts
-    MAIL_DEFAULT_SENDER = 'dimka.nevstruev@bk.ru'
-    MAIL_USERNAME = 'dimka.nevstruev@bk.ru'
-    MAIL_PASSWORD = '321ewq'
+    MAIL_DEFAULT_SENDER = 'tigera20111@gmail.ru'
+    MAIL_USERNAME = 'tigera20111@gmail.ru'
+    MAIL_PASSWORD = 'Tiger1997'
